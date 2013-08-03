@@ -82,6 +82,7 @@ describe OrganisationsController do
       patch :update, 'id' => @organisation.key, 'organisation' => {'name' => nil}
       response.status.should eq(400)
       response.should render_template('edit')
+      response.body.should match "can&#39;t be blank"
       @organisation.reload.name.should_not be_nil
     end
   end
