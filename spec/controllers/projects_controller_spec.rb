@@ -17,4 +17,34 @@ describe ProjectsController do
     end
   end
 
+  describe 'GET #show' do
+    it 'should display the project'
+  end
+
+  describe 'GET #new' do
+    it 'should render the form'
+  end
+
+  describe 'GET #edit' do
+    it 'should render the form'
+  end
+
+  describe 'POST #create' do
+    it 'should create a new project'
+    it 'should enfore required fields'
+  end
+
+  describe 'PATCH #update' do
+    it 'should update a project'
+    it 'should enforce required fields'
+  end
+
+  def valid_params
+    {'name' => 'Sunrise', 'key' => 'sunrise', 'public' => true}
+  end
+
+  def invalid_params
+    {'name' => nil, 'key' => 'sunrise', 'public' => true}
+  end
+
 end

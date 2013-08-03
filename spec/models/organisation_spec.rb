@@ -17,4 +17,6 @@ describe Organisation do
     org.save
     org.api_token.should_not be_blank
   end
+
+  it 'should make the key URI safe'
 end

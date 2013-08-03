@@ -1,5 +1,5 @@
 def dummy_organisation
-  Organisation.create(name: "Test Organisation", key: "test-organisation")
+  @dummy_organisation ||= Organisation.create(name: "Test Organisation", key: "test-organisation")
 end
 
 def should_change_by(inline_code, integer_to_change_by = 1, &block)
