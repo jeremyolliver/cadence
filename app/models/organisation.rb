@@ -1,4 +1,5 @@
 class Organisation < ActiveRecord::Base
+  include URIKey
 
   has_many :projects
 

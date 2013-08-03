@@ -1,4 +1,5 @@
 class Project < ActiveRecord::Base
+  include URIKey
 
   belongs_to :organisation
 
