@@ -8,6 +8,10 @@ class Organisation < ActiveRecord::Base
 
   before_validation :assign_api_token
 
+  def to_param
+    key
+  end
+
   protected
 
   def assign_api_token
