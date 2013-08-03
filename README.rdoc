@@ -8,7 +8,7 @@ Cadence is an application aimed at keeping track of the healthiness of your appl
 
 At present it is a work in progress, keep an eye on https://github.com/jeremyolliver/cadence/releases for updates that will be made available when stable releases are done.
 
-Feature list/Wishlist:
+=== Feature list/Wishlist:
 
 * [ ] Support for organisations with multiple users and projects
 * [ ] Support for code coverage via simplecov
