@@ -78,6 +78,12 @@ describe OrganisationsController do
       patch :update, 'id' => @organisation.key, 'organisation' => {'api_token' => 'haxxed'}
       @organisation.reload.api_token.should_not eq('haxxed')
     end
+    it 'should show validation errors' do
+      patch :update, 'id' => @organisation.key, 'organisation' => {'name' => nil}
+      response.status.should eq(400)
+      response.should render_template('edit')
+      @organisation.reload.name.should_not be_nil
+    end
   end
 
   describe 'POST #select' do
