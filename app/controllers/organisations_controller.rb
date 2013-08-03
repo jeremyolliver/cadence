@@ -25,7 +25,7 @@ class OrganisationsController < ApplicationController
     end
     redirect_to organisations_path
   rescue ActiveRecord::RecordInvalid
-    render :new
+    render :new, :status => 400
   end
 
   protected
