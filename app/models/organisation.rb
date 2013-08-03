@@ -1,4 +1,7 @@
 class Organisation < ActiveRecord::Base
+
+  has_many :projects
+
   validates :name,      :presence => true
   validates :key,       :presence => true, :uniqueness => true
   validates :api_token, :presence => true, :uniqueness => true

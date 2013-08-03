@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130803045258) do
+ActiveRecord::Schema.define(version: 20130803061832) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,5 +27,16 @@ ActiveRecord::Schema.define(version: 20130803045258) do
 
   add_index "organisations", ["api_token"], name: "index_organisations_on_api_token", unique: true, using: :btree
   add_index "organisations", ["key"], name: "index_organisations_on_key", unique: true, using: :btree
+
+  create_table "projects", force: true do |t|
+    t.integer  "organisation_id"
+    t.string   "name"
+    t.string   "key"
+    t.boolean  "public",          default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "projects", ["organisation_id", "key"], name: "index_projects_on_organisation_id_and_key", unique: true, using: :btree
 
 end
