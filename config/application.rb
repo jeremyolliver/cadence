@@ -13,6 +13,10 @@ Bundler.require(:default, Rails.env)
 
 module Cadence
   class Application < Rails::Application
+
+    # strong_parameters should raise in all environments
+    config.action_controller.action_on_unpermitted_parameters :raise
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

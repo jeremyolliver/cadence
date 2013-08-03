@@ -1,0 +1,6 @@
+%h1 Organisations
+
+%ul
+  = render :partial => 'organisation', :collection => @organisations
+
+= link_to "Add new organisation", new_organisation_path, class: 'btn btn-primary'

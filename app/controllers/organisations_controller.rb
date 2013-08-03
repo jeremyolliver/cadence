@@ -17,4 +17,21 @@ class OrganisationsController < ApplicationController
     @organisation = Organisation.new
   end
 
+  def create
+    @organisation = Organisation.new(organisation_params)
+    Organisation.transaction do
+      # @organisation.add_user(current_user) # TODO:
+      @organisation.save!
+    end
+    redirect_to organisations_path
+  rescue ActiveRecord::RecordInvalid
+    render :new
+  end
+
+  protected
+
+  def organisation_params
+    params.require(:organisation).permit(:name, :key)
+  end
+
 end

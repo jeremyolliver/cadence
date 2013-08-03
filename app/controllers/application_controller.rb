@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
 
   def current_organisation
     if session[:organisation_id]
-      Organisation.where({:organisation_id => session[:organisation_id]}).first
+      Organisation.where({:id => session[:organisation_id]}).first
     elsif o = Organisation.first
       session[:organisation_id] = o.id
     else

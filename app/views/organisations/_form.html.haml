@@ -1,0 +1,8 @@
+= simple_form_for organisation do |f|
+  = f.error_notification
+
+  = f.input :name
+  = f.input :key
+
+  .actions
+    = f.button :submit
