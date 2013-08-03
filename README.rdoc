@@ -10,14 +10,14 @@ At present it is a work in progress, keep an eye on https://github.com/jeremyoll
 
 Feature list/Wishlist:
 
-  * [ ] Support for organisations with multiple users and projects
-  * [ ] Support for code coverage via simplecov
-  * [ ] Display history of submitted coverage
-  * [ ] Browse through to full coverage reports from list
-  * [ ] Display graph of change in coverage over time
-  * [ ] Support for style guide (e.g. cane results)
-  * [ ] Support for brakeman security reports
-  * [ ] Support for private organisations/projects and user ACL's
+* [ ] Support for organisations with multiple users and projects
+* [ ] Support for code coverage via simplecov
+* [ ] Display history of submitted coverage
+* [ ] Browse through to full coverage reports from list
+* [ ] Display graph of change in coverage over time
+* [ ] Support for style guide (e.g. cane results)
+* [ ] Support for brakeman security reports
+* [ ] Support for private organisations/projects and user ACL's
 
 === Installation
 
@@ -28,6 +28,16 @@ Checkout the source code, and install the dependencies:
     git clone git@github.com:jeremyolliver/cadence.git
     bundle install --deployment --without development test
     bundle exec rails server
+
+=== Contributing to Cadence
+
+* Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
+* Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
+* Fork the project
+* Start a feature/bugfix branch
+* Commit and push until you are happy with your contribution
+* Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
+* Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
 
 === Development
 
