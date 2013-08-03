@@ -3,6 +3,7 @@
 
   = f.input :name
   = f.input :key
+  =# f.input :public_by_default, :hint => "Should projects for this organisation be public by default?"
 
   .actions
-    = f.button :submit
+    = f.button :submit, :class => 'btn btn-primary'

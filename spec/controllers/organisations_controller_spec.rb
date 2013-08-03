@@ -53,4 +53,42 @@ describe OrganisationsController do
     end
   end
 
+  describe 'GET #edit' do
+    it 'should render the edit form' do
+      org = dummy_organisation
+      get :edit, {:id => org.key}
+      response.should be_success
+      assert_select "form.organisation" do
+        assert_select "input[name=?]", "organisation[name]"
+        assert_select "input[name=?]", "organisation[key]"
+      end
+    end
+  end
+
+  describe 'PATCH #update' do
+    before do
+      @organisation = dummy_organisation
+    end
+    it 'should update an organisation' do
+      patch :update, 'id' => @organisation.key, 'organisation' => {'name' => 'Something Else'}
+      response.should redirect_to organisations_path
+      @organisation.reload.name.should eq('Something Else')
+    end
+    it 'should not allow updating of api_token' do
+      patch :update, 'id' => @organisation.key, 'organisation' => {'api_token' => 'haxxed'}
+      @organisation.reload.api_token.should_not eq('haxxed')
+    end
+  end
+
+  describe 'POST #select' do
+    it 'should successfully update the session' do
+      # reset_session
+      current_organisation.should eq(nil)
+      org = dummy_organisation
+      post :select, {'id' => org.key}
+      response.should redirect_to dashboard_path
+      current_organisation.should eq(org)
+    end
+  end
+
 end

@@ -24,4 +24,8 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_organisation
 
+  def set_current_organisation!(org)
+    session[:organisation_id] = org.id
+  end
+
 end

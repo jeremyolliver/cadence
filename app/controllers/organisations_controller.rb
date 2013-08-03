@@ -1,5 +1,6 @@
 class OrganisationsController < ApplicationController
 
+  before_filter :load_organisation, only: [:show, :edit, :update, :select]
   skip_filter :ensure_organisation_selected
 
   # TODO: all actions need scoping to current_user when user authentication is implemented
@@ -8,13 +9,19 @@ class OrganisationsController < ApplicationController
     @organisations = Organisation.order(:name)
   end
 
-  def show
-    # current_user.organisations.where(:key => params[:id]).first
-    @organisation = Organisation.where(:key => params[:id]).first
-  end
-
   def new
     @organisation = Organisation.new
+  end
+
+  def show
+  end
+
+  def edit
+  end
+
+  def select
+    set_current_organisation!(@organisation)
+    redirect_to dashboard_path
   end
 
   def create
@@ -28,10 +35,25 @@ class OrganisationsController < ApplicationController
     render :new, :status => 400
   end
 
+  def update
+    if @organisation.update_attributes(organisation_params)
+      redirect_to organisations_path
+    else
+      render :edit, :status => 400
+    end
+  end
+
   protected
 
+  def load_organisation
+    # TODO:
+    # current_user.organisations.where(:key => params[:id]).first
+    @organisation = Organisation.where(key: params[:id]).first
+    raise ActiveRecord::RecordNotFound unless @organisation
+  end
+
   def organisation_params
-    params.require(:organisation).permit(:name, :key)
+    params.require(:organisation).permit(:name, :key) # :public_by_default
   end
 
 end
