@@ -1,0 +1,11 @@
+= simple_form_for project do |f|
+  = f.error_notification
+
+  = f.association :organisation, collection: Organisation.all
+  =# TODO: use for collection current_user.organisations
+  = f.input :name
+  = f.input :key
+  = f.input :public
+
+  .actions
+    = f.button :submit, :class => 'btn btn-primary'

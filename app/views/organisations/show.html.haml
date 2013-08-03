@@ -1,6 +1,13 @@
 %h1
-  Cadence &endash;
+  Cadence -
   = @organisation.name
+
+%h2 Projects
+
+%ul
+  = render partial: 'projects/project', collection: @organisation.projects.order('name')
+
+= link_to 'Add new project', new_project_path, class: 'btn'
 
 %h2 Latest Updates
 

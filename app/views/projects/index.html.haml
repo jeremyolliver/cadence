@@ -5,6 +5,6 @@
 %h2 Projects
 
 %ul
-  =# render partial: 'projects', collection: @projects
+  = render partial: 'project', collection: @projects
 
-= link_to 'Add new project' new_project_path
+= link_to 'Add new project', new_project_path, class: 'btn btn-primary'
