@@ -8,6 +8,8 @@ Cadence::Application.routes.draw do
     post :select, on: :member
   end
 
+  resources :projects
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

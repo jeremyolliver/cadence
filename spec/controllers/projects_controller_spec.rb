@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe DashboardController do
+describe ProjectsController do
 
   describe 'GET #index' do
     it 'should redirect with no organisations' do
@@ -16,4 +16,5 @@ describe DashboardController do
       # TODO: assigns(:projects).map(&:organisation).uniq.should eq(org)
     end
   end
+
 end

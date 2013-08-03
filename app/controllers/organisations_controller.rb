@@ -21,7 +21,7 @@ class OrganisationsController < ApplicationController
 
   def select
     set_current_organisation!(@organisation)
-    redirect_to dashboard_path
+    redirect_to projects_path
   end
 
   def create

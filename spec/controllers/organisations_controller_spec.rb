@@ -92,7 +92,7 @@ describe OrganisationsController do
       current_organisation.should eq(nil)
       org = dummy_organisation
       post :select, {'id' => org.key}
-      response.should redirect_to dashboard_path
+      response.should redirect_to projects_path
       current_organisation.should eq(org)
     end
   end

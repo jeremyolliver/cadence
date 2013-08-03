@@ -1,2 +1,6 @@
 %li
   = link_to organisation.name, organisation_path(organisation)
+  |
+  = link_to 'edit', edit_organisation_path(organisation)
+  |
+  = link_to 'select', select_organisation_path(organisation), method: 'post'

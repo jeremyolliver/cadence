@@ -1,4 +1,4 @@
-class DashboardController < ApplicationController
+class ProjectsController < ApplicationController
 
   def index
     @projects = current_organisation.projects
