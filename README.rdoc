@@ -1,0 +1,52 @@
+== Cadence
+
+{<img src="https://travis-ci.org/jeremyolliver/cadence.png?branch=master" alt="Build Status" />}[https://travis-ci.org/jeremyolliver/cadence]
+{<img src="https://coveralls.io/repos/jeremyolliver/cadence/badge.png?branch=master" alt="Coverage Status" />}[https://coveralls.io/r/jeremyolliver/cadence?branch=master]
+{<img src="https://codeclimate.com/github/jeremyolliver/cadence.png" />}[https://codeclimate.com/github/jeremyolliver/cadence]
+
+Cadence is an application aimed at keeping track of the healthiness of your application/project. It recieves and aggregates reports ranging from code coverage, style guide adherence, and security report results.
+
+At present it is a work in progress, keep an eye on https://github.com/jeremyolliver/cadence/releases for updates that will be made available when stable releases are done.
+
+Feature list/Wishlist:
+
+  * [ ] Support for organisations with multiple users and projects
+  * [ ] Support for code coverage via simplecov
+  * [ ] Display history of submitted coverage
+  * [ ] Browse through to full coverage reports from list
+  * [ ] Display graph of change in coverage over time
+  * [ ] Support for style guide (e.g. cane results)
+  * [ ] Support for brakeman security reports
+  * [ ] Support for private organisations/projects and user ACL's
+
+=== Installation
+
+Ruby 2.0 and Ruby 1.9.3 will be officially supported and tested on. To install the application:
+
+Checkout the source code, and install the dependencies:
+
+    git clone git@github.com:jeremyolliver/cadence.git
+    bundle install --deployment --without development test
+    bundle exec rails server
+
+=== Development
+
+Checkout the source code
+
+    git clone git@github.com:jeremyolliver/cadence.git
+
+Install dependencies
+
+    bundle install
+
+Run server
+
+    bundle exec rails server
+
+Run tests
+
+    bundle exec rake spec
+
+---
+
+Copyright 2013 Jeremy Olliver
