@@ -35,6 +35,7 @@ end
 group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails', '~> 2.14.0'
+  gem 'shoulda-matchers'
   gem 'coveralls', require: false
   gem 'simplecov', require: false
 end
