@@ -13,4 +13,8 @@ module URIKey
     end
   end
 
+  def to_param
+    key
+  end
+
 end

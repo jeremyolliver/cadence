@@ -30,6 +30,7 @@ class OrganisationsController < ApplicationController
       # @organisation.add_user(current_user) # TODO:
       @organisation.save!
     end
+    flash[:success] = 'Organisation created'
     redirect_to organisations_path
   rescue ActiveRecord::RecordInvalid
     render :new, :status => 400
@@ -37,6 +38,7 @@ class OrganisationsController < ApplicationController
 
   def update
     if @organisation.update_attributes(organisation_params)
+      flash[:success] = 'Organisation updated'
       redirect_to organisations_path
     else
       render :edit, :status => 400

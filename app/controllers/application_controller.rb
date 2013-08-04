@@ -7,6 +7,12 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def visible_organisations
+    # TODO: switch for current_user.organisations
+    Organisation.all
+  end
+  helper_method :visible_organisations
+
   def ensure_organisation_selected
     unless current_organisation
       redirect_to organisations_path
