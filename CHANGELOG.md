@@ -6,7 +6,6 @@ Intended initial release feature set:
 
 * No built-in authentication
 * Create multiple Organisations/Projects
-* Embeddable badges for each reported metric
 * Submit project code coverage via API
 * View project code coverage change over time
 

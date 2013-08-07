@@ -30,7 +30,6 @@ Submit code coverage results as follows:
       {
         "metric": "coverage",
         "value": "98",
-        "unit": "%",
         "source_control": {
           "branch": "master"
           "version_number": "8e8166459aad8e7c2fc7e1e4b3f7a4a61ab37cb9"
