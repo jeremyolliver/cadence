@@ -5,3 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+coverage = MetricType.where(key: "coverage").first || MetricType.new(key: "coverage")
+coverage.attributes = {
+  name:          "Code Coverage",
+  key:           "coverage",
+  format_suffix: "%",
+  min_value:     0,
+  max_value:     100,
+  positive:      true
+}
+coverage.save!

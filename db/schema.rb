@@ -11,10 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130803061832) do
+ActiveRecord::Schema.define(version: 20130807110544) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "metric_types", force: true do |t|
+    t.string   "name"
+    t.string   "key"
+    t.float    "min_value"
+    t.float    "max_value"
+    t.string   "format_prefix"
+    t.string   "format_suffix"
+    t.boolean  "positive",      default: true, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "metric_types", ["key"], name: "index_metric_types_on_key", unique: true, using: :btree
 
   create_table "organisations", force: true do |t|
     t.string   "name"
