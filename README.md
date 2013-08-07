@@ -20,6 +20,26 @@ At present it is a work in progress, keep an eye on https://github.com/jeremyoll
 * [ ] Support for brakeman security reports
 * [ ] Support for private organisations/projects and user ACL's
 
+## Usage
+
+### API:
+
+Submit code coverage results as follows:
+
+    curl -H "X-Cadence-API-Token: 1a2e45a5c5ed73a4a48a823506add7dd" -X post https://cadence.example.com/projects/example_project -d '
+      {
+        "metric": "coverage",
+        "value": "98",
+        "unit": "%",
+        "source_control": {
+          "branch": "master"
+          "version_number": "8e8166459aad8e7c2fc7e1e4b3f7a4a61ab37cb9"
+        }
+      }
+    '
+
+Where the `metric` and `value` are required parameters and all others are optional.
+
 ## Installation
 
 Ruby 2.0 and Ruby 1.9.3 will be officially supported and tested on. To install the application:
