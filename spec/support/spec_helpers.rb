@@ -10,6 +10,20 @@ def dummy_project
   dummy_organisation.projects.create(name: "Test Project", key: "test-project")
 end
 
+def coverage_metric_type
+  coverage = MetricType.where(key: "coverage").first || MetricType.new(key: "coverage")
+  coverage.attributes = {
+    name:          "Code Coverage",
+    key:           "coverage",
+    format_suffix: "%",
+    min_value:     0,
+    max_value:     100,
+    positive:      true
+  }
+  coverage.save!
+  coverage
+end
+
 def should_change_by(inline_code, integer_to_change_by = 1, &block)
   before_value = eval(inline_code)
   yield
