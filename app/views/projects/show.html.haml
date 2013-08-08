@@ -1,3 +1,6 @@
 %h1= @project.name
 
 %h2 Latest Updates
+
+%ul
+  = render partial: 'metrics/update', collection: @project.recent_updates

@@ -1,0 +1,6 @@
+%li
+  = update.metric_code
+  reported as
+  = formatted_metric_value(update)
+  on
+  = friendly_datetime_format(update.created_at)

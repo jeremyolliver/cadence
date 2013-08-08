@@ -7,4 +7,10 @@ class Project < ActiveRecord::Base
   validates :name, :presence => true
   validates :key,  :presence => true, :uniqueness => {:scope => :organisation_id}
 
+  has_many :metrics
+
+  def recent_updates
+    metrics.order('created_at DESC').limit(20)
+  end
+
 end
