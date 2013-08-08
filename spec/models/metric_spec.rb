@@ -15,9 +15,9 @@ describe Metric do
     cov = coverage_metric_type
     below = Metric.new(metric_code: 'coverage', value: -2)
     below.should_not be_valid
-    below.errors['value'].should_not be_empty
-    above = Metric.new(metric_code: 'coverage', value: 101)
-    below.should_not be_valid
-    below.errors['value'].should_not be_empty
+    below.errors['value'][0].should match /below the minimum/
+    above = Metric.new(metric_code: 'coverage', value: 120)
+    above.should_not be_valid
+    above.errors['value'][0].should match /above the maximum/
   end
 end
