@@ -21,7 +21,7 @@ class Api::BaseController < ActionController::Base
   helper_method :current_organisation
 
   def provided_token
-    request.env['X-Cadence-API-Token']
+    request.headers['X-Cadence-API-Token']
   end
 
 end

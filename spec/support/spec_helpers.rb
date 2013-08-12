@@ -7,7 +7,11 @@ def dummy_organisation
 end
 
 def dummy_project
-  dummy_organisation.projects.create(name: "Test Project", key: "test-project")
+  if project = Project.where(key: 'test-project').first
+    project
+  else
+    dummy_organisation.projects.create(name: "Test Project", key: "test-project")
+  end
 end
 
 def coverage_metric_type
@@ -25,16 +29,16 @@ def coverage_metric_type
 end
 
 def should_change_by(inline_code, integer_to_change_by = 1, &block)
-  before_value = eval(inline_code)
+  before_value = eval(inline_code, block.binding)
   yield
-  after_value = eval(inline_code)
+  after_value = eval(inline_code, block.binding)
   after_value.should eq(before_value + integer_to_change_by)
 end
 
 def should_not_change(inline_code, &block)
-  before_value = eval(inline_code)
+  before_value = eval(inline_code, block.binding)
   yield
-  after_value = eval(inline_code)
+  after_value = eval(inline_code, block.binding)
   after_value.should eq(before_value)
 end
 

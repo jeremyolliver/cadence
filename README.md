@@ -26,9 +26,9 @@ At present it is a work in progress, keep an eye on https://github.com/jeremyoll
 
 Submit code coverage results as follows:
 
-    curl -H "X-Cadence-API-Token: 1a2e45a5c5ed73a4a48a823506add7dd" -X post https://cadence.example.com/projects/example_project -d '
+    curl -H "X-Cadence-API-Token: 1a2e45a5c5ed73a4a48a823506add7dd" -X POST https://cadence.example.com/api/metrics/example_project -d '
       {
-        "metric": "coverage",
+        "category": "coverage",
         "value": "98",
         "source_control": {
           "branch": "master"
