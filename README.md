@@ -16,7 +16,7 @@ At present it is a work in progress, keep an eye on https://github.com/jeremyoll
 * [ ] Display history of submitted coverage
 * [ ] Browse through to full coverage reports from list
 * [ ] Display graph of change in coverage over time
-* [ ] Support for style guide (e.g. cane results)
+* [ ] Support for style guide (e.g. cane / rubocop results)
 * [ ] Support for brakeman security reports
 * [ ] Support for private organisations/projects and user ACL's
 
