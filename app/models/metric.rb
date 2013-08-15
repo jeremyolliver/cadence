@@ -8,6 +8,10 @@ class Metric < ActiveRecord::Base
   validates :metric_type,  :presence => true
   validate :metric_within_permitted_range
 
+  scope :of_type, lambda {|code| where(metric_code: code) }
+  scope :after_date, lambda {|date| where(["created_at >= ?", date]) }
+  scope :upto_date, lambda {|date| where(["created_at <= ?", date]) }
+
   protected
 
   def metric_within_permitted_range

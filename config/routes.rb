@@ -10,8 +10,10 @@ Cadence::Application.routes.draw do
 
   resources :projects
 
-  namespace :api do
-    post '/metrics/:project_id' => 'metrics#create', :defaults => {:format => 'json'}
+  get '/metrics/:project_id/:metric_type' => 'metrics#show'
+
+  namespace :api, :defaults => {:format => 'json'} do
+    post '/metrics/:project_id' => 'metrics#create'
   end
 
   # Example of regular route:

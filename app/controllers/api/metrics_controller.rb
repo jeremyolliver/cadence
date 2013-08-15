@@ -8,9 +8,9 @@ class Api::MetricsController < Api::BaseController
         value: metric_params[:value],
         organisation: current_organisation
       })
-      render :json => :created
+      render :created
     else
-      render :json => :error
+      render :error
     end
   end
 
@@ -24,7 +24,7 @@ class Api::MetricsController < Api::BaseController
 
   def load_project
     @project = current_organisation.projects.where(key: params[:project_id]).first
-    raise ActiveRecord::RecordNotFound unless @project
+    raise ActiveRecord::RecordNotFound.new(@project) unless @project
   end
 
 end

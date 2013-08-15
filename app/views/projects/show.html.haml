@@ -4,3 +4,6 @@
 
 %ul
   = render partial: 'metrics/update', collection: @project.recent_updates
+
+= javascript_tag do
+  = "render_coverage_graph('#{@project.key}');"
